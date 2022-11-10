@@ -17,6 +17,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig 
 {
 	@Bean
+	public Docket api(){
+			return new Docket(DocumentationType.SWAGGER_2).select()
+				.api(RequestHandlerSelectors.basePackage("com.greatlearning.employees.controller")).build();
+	}
+	/*
 	public Docket orderApi()
 	{
 		return new Docket(DocumentationType.SWAGGER_2)
@@ -40,6 +45,7 @@ public class SwaggerConfig
 				.version("1.0.0")
 				.build();
 	}
+	*/
 
 
 }
